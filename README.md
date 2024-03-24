@@ -1,6 +1,9 @@
 1. Создан свой кастомный образ nginx на базе alpine.
 Берем шаблон Dockerfile для nginx и добавляем кастомную страницу
+
+```shell
 ADD index.html /usr/share/nginx/html
+```
 
 ```shell
 user@user:~/Documents/Vagrant/19. Docker$ sudo docker build -t mynginx .
@@ -30,8 +33,10 @@ user@user:~/Documents/Vagrant/19. Docker$ sudo docker ps -a
 CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                               NAMES
 9a9d2978fe3c   mynginx   "/docker-entrypoint.…"   27 seconds ago   Up 26 seconds   0.0.0.0:88->80/tcp, :::88->80/tcp   sweet_herschel
 ```
+Кастомная страница nginx по 88 порту
+![alt text](pic/3.png)
 
-3. Образ - аналог класса, а контейнер - аналог экземпляра класса. На основе одного образа можно запустить несколько контейнеров
-4. 
-
-https://hub.docker.com/r/tomzo/buildkernel
+2. Образ - аналог класса, а контейнер - аналог экземпляра класса. На основе одного образа можно запустить несколько контейнеров
+3. Можно, например в https://hub.docker.com/r/tomzo/buildkernel, где собирают ядро Linux внутри Docker-контейнера
+4. Не получилось запушить, хотя и залогинился успешно
+   ![alt text](pic/4.png)
